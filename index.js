@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+require('dotenv').config()
 
 const SSLCommerzPayment = require('sslcommerz-lts')
 const store_id = 'shiha614e9921e28de'
@@ -54,6 +55,6 @@ app.get('/init', (req, res) => {
     });
 })
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
